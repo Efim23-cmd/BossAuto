@@ -1,0 +1,58 @@
+﻿@import 'FontStyle.css';
+
+body {
+    font-family: 'Roboto_Mono';
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+h1{
+    text-align: center;
+}
+form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input {
+    transition: all 0.2s ease;
+    padding: 10px;
+    border-radius: 8px;
+    width: 30vw;
+    min-width: 200px;
+    border-color: #d9d9d959;
+    font-size: 20px;
+}
+input[type="submit"] {
+    padding: 5px;
+    border-radius: 8px;
+    background-color: transparent;
+    width: 10vw;
+    min-width: 130px;
+    text-align: center;
+}
+#blockErrors {
+    pointer-events:none;
+    position: absolute;
+    width: 95vw;
+    top: 20px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    justify-items: center;
+    align-items:flex-end;
+    gap: 10px;
+}
+#blockErrors div{
+    color: white;
+    width: 200px;
+    padding: 20px;
+    background-color: darkred;
+    border-radius: 15px;
+    border: 5px solid black;
+}

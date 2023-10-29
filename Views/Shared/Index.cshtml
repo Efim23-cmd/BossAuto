@@ -1,0 +1,247 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@model Boolean
+@{
+    if (Model)
+    {
+        ViewBag.Title = "ADMIN MOD";
+    }
+    else
+    {
+        ViewBag.Title = "BossAuto | Автосигнализации, автозвук, шумоизоляция авто | Йошкар-Ола";
+    }
+    
+}
+
+@section Style{
+    <link href="~/css/Main.css" rel="stylesheet" type="text/css" />
+    <link rel="preload" href="~/css/_LoadPage.css" as="style" />
+}
+<div id="loadBlock">
+    <div id="moveBlock">
+        <h1>BossAuto</h1>
+    </div>
+</div>
+<div id="mapBar"></div>
+<div id="menuBar">
+    <div>
+        <ul class="mobileNavigation">
+            <li><a class="AutoSound-Link link_menuBar" href="#AutoSound">Автозвук</a></li>
+            <li><a class="Alarms-Link link_menuBar" href="#Alarms">Автосигнализации</a></li>
+            <li> <a class="Tinting-Link link_menuBar" href="#Tinting">Тонировка</a></li>
+            <li><a class="Noise_Insulation-Link link_menuBar" href="#Noise_Insulation">Шумоизоляция</a></li>
+            <li>
+                <a href="https://youtube.com/@@bossauto863" target="_blank" style="color:rgb(255, 0, 0)">
+                    <i id="icon_youtube" class="fa fa-brands fa-youtube fa-1_3x" aria-hidden="true"></i>
+                </a>
+                <a href="https://vk.com/bossauto12" target="_blank" style="color:rgb(0, 119, 255)"> 
+                    <i id="icon_vk" class="fa fa-brands fa-vk  fa-1_3x" aria-hidden="true"></i>
+                </a>
+                <a href="https://instagram.com/boss.auto.12?igshid=MzRlODBiNWFlZA==" target="_blank" style="background: linear-gradient(135deg, #405DE6 20%, #FD1D1D 70%);-webkit-background-clip: text; -webkit-text-fill-color: #61333300;">
+                    <i id="icon_instagram" class="fa fa-brands fa-instagram  fa-1_3x" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.avito.ru/yoshkar-ola/predlozheniya_uslug/avtosignalizatsiiavtozapusktonirovka_1217842974?utm_campaign=native&utm_medium=item_page_android&utm_source=soc_sharing_seller" target="_blank">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" style="width: 32px; height: 32px; transform: translateY(4px);" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10.595" cy="5.225" r="3.325" fill="#965EEB"></circle>
+                        <circle cx="22.245" cy="7.235" r="7.235" fill="#0AF"></circle>
+                        <circle cx="8.9" cy="18.6" r="8.9" fill="#04E061"></circle>
+                        <circle cx="24.325" cy="21.005" r="5.375" fill="#FF4053"></circle>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+@{
+    if (Model)
+    {
+        await Html.RenderPartialAsync("ChangerBars");
+    }
+}
+
+<div id="navbar">
+    <div class="link_menuBar" id="navbar_left">
+        <a class="main-Link" href="#main">BossAuto</a>
+    </div>
+    <div id="navbar_center">
+        <a class="animateLink AutoSound-Link link_menuBar" href="#AutoSound">Автозвук</a>
+        <a class="animateLink Alarms-Link link_menuBar" href="#Alarms">Автосигнализации</a>
+        <a class="animateLink Tinting-Link link_menuBar" href="#Tinting">Тонировка</a>
+        <a class="animateLink Noise_Insulation-Link link_menuBar" href="#Noise_Insulation">Шумоизоляция</a>
+    </div>
+    <div id="navbar_right">
+        <a href="https://youtube.com/@@bossauto863" target="_blank" style="color:rgb(255, 0, 0)">
+            <i id="icon_youtube" class="fa fa-brands fa-youtube fa-1_3x" aria-hidden="true"></i>
+        </a>
+        <a href="https://vk.com/bossauto12" target="_blank" style="color:rgb(0, 119, 255)">
+            <i id="icon_vk" class="fa fa-brands fa-vk  fa-1_3x" aria-hidden="true"></i>
+        </a>
+        <a href="https://instagram.com/boss.auto.12?igshid=MzRlODBiNWFlZA==" target="_blank" style="background: linear-gradient(135deg, #405DE6 20%, #FD1D1D 70%);-webkit-background-clip: text; -webkit-text-fill-color: #61333300;">
+            <i id="icon_instagram" class="fa fa-brands fa-instagram  fa-1_3x" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.avito.ru/yoshkar-ola/predlozheniya_uslug/avtosignalizatsiiavtozapusktonirovka_1217842974?utm_campaign=native&utm_medium=item_page_android&utm_source=soc_sharing_seller" target="_blank">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" style="width: 20px; height: 20px; transform: translateY(2px);" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10.595" cy="5.225" r="3.325" fill="#965EEB"></circle>
+                <circle cx="22.245" cy="7.235" r="7.235" fill="#0AF"></circle>
+                <circle cx="8.9" cy="18.6" r="8.9" fill="#04E061"></circle>
+                <circle cx="24.325" cy="21.005" r="5.375" fill="#FF4053"></circle>
+            </svg>
+        </a>
+    </div>
+    <div id="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+<div id="main_body">
+    <div id="container">
+        <div id="contactsScreen" class="screen">
+            <div>
+                <div class="moveableBlock" id="welcome"></div>
+                <div class="moveableBlock" id="location">
+                    ул. Фестивальная, д.72, Йошкар-Ола, РМЭ, 424000, Россия
+                </div>
+                <receiver-text class="moveableBlock changeBlockText" id="schedule"></receiver-text>
+                <receiver-text class="moveableBlock changeBlockText" id="phone"></receiver-text>
+                <div class="moveableBlock" id="map"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Afe6e8b98215d440a02e6af7247ab71623af5df4eab6dfb8926434a379aad7380&amp;source=constructor" frameborder="0"></iframe></div>
+                <div class="moveableBlock" id="location">ул. Фестивальная, д.72, Йошкар-Ола, РМЭ, 424000, Россия</div>
+            </div>
+        </div>
+        <div id="autoSoundScreen" class="screen">
+            <div>
+                <div class="title moveableBlock">
+                    Автозвук
+                </div>
+                <receiver-text class="text changeBlockText moveableBlock" id="AutoSoundText"></receiver-text>
+                <div class="slider moveableBlock">
+                    <div class="overflow">
+                        <div class="container">
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="1" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="2" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="3" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="4" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="5" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="6" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="7" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="alarmsScreen" class="screen">
+            <div>
+                <div class="title moveableBlock">
+                    Автосигнализация
+                </div>
+                <receiver-text class="text changeBlockText moveableBlock" id="AlarmsText"></receiver-text>
+                <receiver-text class="priceList changeBlockText moveableBlock" id="AlarmsPriceList"></receiver-text>
+                <div class="slider moveableBlock">
+                    <div class="overflow">
+                        <div class="container">
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="8" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="9" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="10" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="11" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="10" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tintingScreen" class="screen">
+            <div>
+                <div class="title moveableBlock">
+                    Тонировка
+                </div>
+                <receiver-text class="text changeBlockText moveableBlock" id="TintingText"></receiver-text>
+                <receiver-text class="priceList changeBlockText moveableBlock" id="TintingPriceList"></receiver-text>
+                <div class="slider moveableBlock">
+                    <div class="overflow">
+                        <div class="container">
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="12" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="13" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="14" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="15" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="16" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="insulationScreen" class="screen">
+            <div>
+                <div class="title moveableBlock">
+                    Шумоизоляция
+                </div>
+                <receiver-text class="text changeBlockText moveableBlock" id="InsulationText"></receiver-text>
+                <div class="slider moveableBlock">
+                    <div class="overflow">
+                        <div class="container">
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="17" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="18" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="19" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="20" />
+                            </div>
+                            <div class="slide loading">
+                                <receiver-img class="changeBlockImg" id="21" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Script{
+        <script rel="preload" as="script" type="module" asp-src-include="~/js/*.js" asp-src-exclude="~/js/Changer.js"></script>
+    @{
+        if (Model)
+        {
+            <script rel="preload" as="script" type="module" src="~/js/Changer.js"></script>
+        }
+    }
+}

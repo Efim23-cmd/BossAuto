@@ -1,0 +1,68 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@model User
+@{
+    ViewBag.Title = "Вход";
+}
+
+@section Style{
+    <link href="~/css/LoginStyle.css" rel="stylesheet" type="text/css" />
+}
+
+<div id="blockErrors">
+
+</div>
+<h1>Вход</h1>
+<form name="LoginForm">
+    <div>
+        <p>
+            <input name="name" placeholder="Логин" autocomplete="off" type="text" maxlength="30" asp-for="Name" />
+        </p>
+        <p>
+            <input name="password" placeholder="Пароль" autocomplete="off" type="password" maxlength="30" asp-for="Password" />
+        </p>
+        <p>
+            <input id="btn_sumbmit" type="submit" value="Подтвердить" />
+        </p>
+    </div>
+</form>
+
+@section Script{
+   <script type="text/javascript">
+
+        let LoginForm = document.forms["LoginForm"];
+
+        let formData = new FormData();
+
+        let btn_sumbmit = document.getElementById("btn_sumbmit");
+        let blockErrors = document.getElementById("blockErrors");
+
+        btn_sumbmit.addEventListener("click", (e) => {
+            e.preventDefault();
+            Check();
+        });
+
+        async function Check() {
+            formData.set("Name", LoginForm.elements["name"].value);
+            formData.set("Password", LoginForm.elements["password"].value);
+            let myFetch = await fetch("Admin/CheckAuthorization", {
+                method: "Post",
+                headers: {
+                    "Accept": "application/json"
+                },
+                body: formData
+            });
+            if (myFetch.ok) {
+                location.replace("/Admin");
+            }
+            else {
+                let response = await myFetch.json();
+                let error = document.createElement("div");
+                error.textContent = response;
+                blockErrors.appendChild(error);
+                setTimeout(() => {
+                    blockErrors.removeChild(error);
+                }, 3000)
+            }
+        }
+   </script>
+}

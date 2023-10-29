@@ -1,0 +1,68 @@
+﻿
+/*Common slider*/
+.overflow {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    background: var(--sub_colorBackground);
+}
+
+.container {
+    position: absolute;
+    left: 0vw;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+}
+.container.animate {
+    transition: transform .5s ease;
+}
+.slide {
+    user-select: none;
+    transition: transform .5s ease;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.slide.foreground {
+    pointer-events: all;
+    opacity: 1;
+}
+.slide.around {
+    pointer-events: none;
+    opacity: 1;
+}
+.slide.background{
+    pointer-events: none;
+    opacity: 0;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    -webkit-user-drag: none;
+    background: var(--sub_colorBackground);
+}
+.slide_bar {
+    z-index: 1;
+    pointer-events: none;
+    grid-area: 2 / 1 / 3 / 2;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.slide_bar div {
+    transition: all 0.2s linear;
+    background: transparent;
+}
+.slide_bar div.active {
+    background: var(--sub_colorText);
+}
+
+/*Autosound slider*/

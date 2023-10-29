@@ -1,0 +1,12 @@
+[
+  {
+    "Name": "BossAutoManager",
+    "Password": "manager_12",
+    "Role": "Admin"
+  },
+  {
+    "Name": "Viewer2023",
+    "Password": "Qwerty2023",
+    "Role": "Viewer"
+  }
+]

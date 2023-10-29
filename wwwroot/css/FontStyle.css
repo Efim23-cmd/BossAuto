@@ -1,0 +1,42 @@
+﻿
+@font-face {
+    font-family: "Lexend_Deca";
+    src: url(Resource/Fonts/LexendDeca-Regular.ttf)
+}
+@font-face {
+    font-family: "Roboto_Mono";
+    src: url(Resource/Fonts/RobotoMono.ttf)
+}
+@font-face {
+    font-family: "Font Awesome 6 Brands";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("Resource/Fonts/fa-brands-400.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-display: block;
+  font-weight: 900;
+  src:  url("Resource/Fonts/fa-solid-900.ttf") format("truetype"); 
+
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-display: block;
+  font-weight: 400;
+  src:  url("Resource/Fonts/fa-regular-400.ttf") format("truetype"); 
+}
+
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    font-display: block;
+    font-weight: 400;
+    src: url("Resource/Fonts/fa-v4compatibility.ttf") format("truetype");
+}
+*::selection {
+    background: var(--colorBackground);
+    color: var(--sub_colorBackground);
+}

@@ -1,0 +1,193 @@
+﻿
+
+@media(max-width: 1100px) {
+    /*Navigation*/
+    #navbar_center {
+        display: none;
+    }
+
+    #navbar_right {
+        display: none;
+    }
+
+    #burger {
+        display: flex !important;
+    }
+    /*Contacts*/
+    #map iframe {
+        pointer-events: none;
+    }
+
+    #welcome {
+        grid-area: 2 / 2 / 5 / 40 !important;
+        font-size: 40px;
+    }
+
+    #map {
+        grid-area: 6 / 2 / 20 / 40 !important;
+        cursor: pointer;
+    }
+
+    #location {
+        grid-area: 21 / 2 / 23 / 40 !important;
+    }
+
+    #schedule {
+        grid-area: 24 / 2 / 37 / 40 !important;
+    }
+
+    #phone {
+        grid-area: 38 / 2 / 40 / 40 !important;
+    }
+    /*AutoSound*/
+    #autoSoundScreen {
+        font-size: 8px !important; 
+    }
+    #autoSoundScreen .text {
+        grid-area: 6 / 2 / 22 / 40 !important;
+    }
+
+    #autoSoundScreen .slider {
+        grid-area: 23 / 2 / 40 / 40 !important;
+    }
+    /*Автосигнализация*/
+    #alarmsScreen .title {
+        grid-area: 2 / 2 / 4 / 40 !important;
+    }
+    #alarmsScreen .text {
+        grid-area: 5 / 2 / 16 / 40 !important;
+    }
+
+    #alarmsScreen .slider {
+        grid-area: 27 / 2 / 40 / 40 !important;
+    }
+
+    #alarmsScreen .priceList {
+        grid-area: 17 / 2 / 26 / 40 !important;
+    }
+    /*Tinting*/
+    #tintingScreen .title {
+        grid-area: 2 / 2 / 4 / 40 !important;
+    }
+
+    #tintingScreen .text {
+        grid-area: 5 / 2 / 16 / 40 !important;
+    }
+
+    #tintingScreen .slider {
+        grid-area: 27 / 2 / 40 / 40 !important;
+    }
+
+    #tintingScreen .priceList {
+        grid-area: 17 / 2 / 26 / 40 !important;
+    }
+    /*Insulation*/
+    #insulationScreen {
+        font-size: 8px !important;
+    }
+
+    #insulationScreen .text {
+        grid-area: 6 / 2 / 22 / 40 !important;
+    }
+
+    #insulationScreen .slider {
+        grid-area: 23 / 2 / 40 / 40 !important;
+    }
+}
+@media (max-width: 460px) {
+    .mobileNavigation {
+        font-size: 25px;
+    }
+
+    #contactsScreen {
+        font-size: 4px !important;
+    }
+}
+@media (max-width: 780px) and (min-height: 660px) {
+    #contactsScreen {
+        font-size: 8px !important;
+    }
+}
+@media (min-width: 780px) and (max-height: 660px) {
+    #contactsScreen {
+        font-size: 6px !important;
+    }
+}
+@media (max-width: 780px) and (max-height: 660px) {
+    #contactsScreen {
+        font-size: 6px !important;
+    }
+}
+
+@media (max-width: 620px) and (min-height: 390px) {
+    #contactsScreen {
+        font-size: 6px !important;
+    }
+}
+@media (min-width: 620px) and (max-height: 390px) {
+    #contactsScreen {
+        font-size: 4px !important;
+    }
+}
+@media (max-width: 620px) and (max-height: 390px) {
+    #contactsScreen {
+        font-size: 4px !important;
+    }
+}
+
+@media (max-width: 900px),(max-height: 900px) {
+    #autoSoundScreen {
+        font-size: 7px !important;
+    }
+}
+@media (max-width: 650px),(max-height: 650px) {
+    #autoSoundScreen {
+        font-size: 6px !important;
+    }
+    #insulationScreen {
+        font-size: 6px !important;
+    }
+}
+@media (max-width: 480px),(max-height: 480px) {
+    #autoSoundScreen {
+        font-size: 5px !important;
+    }
+    #insulationScreen {
+        font-size: 5px !important;
+    }
+}
+@media (max-width: 350px),(max-height: 350px) {
+    #autoSoundScreen {
+        font-size: 4px !important;
+    }
+    #insulationScreen {
+        font-size: 4px !important;
+    }
+}
+
+@media (max-width: 900px),(max-height: 900px) {
+    #alarmsScreen {
+        font-size: 7px !important;
+    }
+    #tintingScreen {
+        font-size: 7px !important;
+    }
+}
+
+@media (max-width: 800px),(max-height: 800px) {
+    #alarmsScreen {
+        font-size: 6px !important;
+    }
+    #tintingScreen {
+        font-size: 6px !important;
+    }
+}
+
+@media (max-width: 480px),(max-height: 480px) {
+    #alarmsScreen {
+        font-size: 5px !important;
+    }
+    #tintingScreen {
+        font-size: 5px !important;
+    }
+}

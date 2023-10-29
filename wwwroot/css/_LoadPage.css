@@ -1,0 +1,28 @@
+﻿
+#loadBlock {
+    z-index: 999;
+    user-select: none;
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s linear;
+    font-family: 'Lexend Deca', monospace;
+}
+#moveBlock {
+    color: black;
+    transition: top 0.3s linear;
+    --width: 1vw;
+    --height: 1vh;
+    position: relative;
+    top: 0px;
+}
+#loadBlock h1 {
+    font-size: calc(((var(--width) + var(--height))/2)*4);
+}
+
