@@ -1,5 +1,9 @@
 ﻿@import 'FontStyle.css';
 
+*::selection {
+    background: #dda15e;
+} 
+
 body {
     font-family: 'Roboto_Mono';
     display: grid;
@@ -9,15 +13,18 @@ body {
     height: 100vh;
     overflow: hidden;
 }
+
 h1{
     text-align: center;
 }
+
 form div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 input {
     transition: all 0.2s ease;
     padding: 10px;
@@ -27,6 +34,7 @@ input {
     border-color: #d9d9d959;
     font-size: 20px;
 }
+
 input[type="submit"] {
     padding: 5px;
     border-radius: 8px;
@@ -35,6 +43,7 @@ input[type="submit"] {
     min-width: 130px;
     text-align: center;
 }
+
 #blockErrors {
     pointer-events:none;
     position: absolute;
@@ -48,6 +57,7 @@ input[type="submit"] {
     align-items:flex-end;
     gap: 10px;
 }
+
 #blockErrors div{
     color: white;
     width: 200px;

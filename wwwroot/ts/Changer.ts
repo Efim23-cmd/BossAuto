@@ -87,7 +87,8 @@ class ChangerImg
                 headers: {
                     "Accept": "application/json"
                 },
-                body: formData
+                body: formData,
+                keepalive: true
             });
             let response = await myFetch.json();
             if (myFetch.ok) {
@@ -163,7 +164,8 @@ class ChangerText
             headers: {
                 "Accept": "application/json"
             },
-            body: formData
+            body: formData,
+            keepalive: true
         });
         let response = await myFetch.json();
         if (myFetch.ok) {
@@ -176,5 +178,6 @@ class ChangerText
         }
     }
 }
+
 new ChangerText("changeBlockText").Start();
 new ChangerImg("changeBlockImg").Start();

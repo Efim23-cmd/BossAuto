@@ -9,7 +9,7 @@
     align-items: center;
     width: 100%;
     max-width: 100vw;
-    height: 70px;
+    height: var(--heightNavigation);
     z-index: 10;
     transition: background 0.2s ease, opacity 0.2s ease;
     backdrop-filter: none;
@@ -18,10 +18,10 @@
     background-color: var(--sub_colorBackground);
     color: var(--sub_colorText);
 }
+
 #navbar a {
     transition: all .2s ease;
 }
-
 
 #navbar_left a {
     font-size: 30px;
@@ -58,12 +58,14 @@
     align-items: center;
     gap: 10px;
 }
+
 #navbar_mobileMenu {
     position: relative;
     top: 10px;
     width: 25px;
     height: 25px;
 }
+
 /*Btn Burger*/
 #burger {
     display: none;
@@ -116,19 +118,21 @@
     transform: rotate(-45deg);
     transition: bottom .3s, transform .3s .15s;
 }
+
 /*menuBar*/
 #menuBar {
     z-index: 9;
     position: fixed;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     background: var(--sub_colorBackground);
     left: 100%;
     transition: left 0.3s ease, background 0.2s ease;
-    font-size: 20px;
+    font-size: calc(2.7em - var(--differenceSizeFont));
     user-select: none;
     overflow: scroll;
 }
+
 #menuBar > div {
     position: relative;
     top: var(--heightNavigation);
@@ -142,47 +146,54 @@
 #menuBar.active {
     left: 0;
 }
+
 .btn_menuBar {
     cursor: pointer;
     display: none !important;
     font-size: 24px;
     transition: all 0.1s linear;
 }
+
 .btn_menuBar:hover{
     opacity: 0.5;
 }
+
 .mobileNavigation {
     list-style: none;
-    font-size: 35px;
 }
 
-    .mobileNavigation li {
+.mobileNavigation li {
         padding: 20px 0;
     }
+
 /*MapBar*/
 #mapBar {
     display: block;
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: 9;
     left: -100%;
     background: white;
     transition: left 0.3s ease;
 }
+
 #mapBar.active {
     left: 0;
 }
+
 #mapBar div {
     position: relative;
     top: 70px;
     width: 100%;
     height: 100%;
 }
+
 #mapBar div iframe{
     width: 100%;
     height: 100%;
 }
+
 /*ChangeBar*/
 .context_container {
     height: 50%;
@@ -191,12 +202,12 @@
     flex-direction: row;
     justify-content: space-evenly;
 }
+
 .input_container {
     width: 100%;
     height: 50%;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -206,33 +217,37 @@
 img:before.loadii{
     
 }
+
 #changeBarText {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: 9;
     left: 100%;
     background: var(--colorBackground);
     transition: left 0.3s ease, background 0.2s ease;
 }
+
 #changeBarText.active {
     left: 0%;
 }
-    #changeBarText textarea {
+
+#changeBarText textarea {
         width: 100%;
         height: 100%;
         background: var(--sub_colorBackground);
         color: var(--sub_colorText);
         border-radius: 0px;
     }
-        #changeBarText textarea:focus-visible {
+
+#changeBarText textarea:focus-visible {
             box-shadow: none;
             outline: none;
             border-bottom: 1px solid black;
             border-top: 1px solid black;
         }
 
-    #changeBarText input {
+#changeBarText input {
         padding: 10px;
         border-radius: 12px;
         border: 2px solid black;
@@ -240,10 +255,12 @@ img:before.loadii{
         color: var(--sub_colorText);
         transition: background 0.1s ease;
     }
-    #changeBarText input:active {
+
+#changeBarText input:active {
         color: var(--sub_colorBackground);
         background: var(--sub_colorText);
     }
+
 #changeBarText > div {
     position: relative;
     display: flex;
@@ -255,20 +272,23 @@ img:before.loadii{
 
 #changeBarImg {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: 9;
     left: 100%;
     background: var(--colorBackground);
     transition: left 0.3s ease, background 0.2s ease;
 }
+
 #changeBarImg.active {
     left: 0%;
 }
-    #changeBarImg img {
+
+#changeBarImg img {
         object-fit: contain;
         min-width: 150px;
     }
+
 #changeBarImg input {
     padding: 10px;
     border-radius: 12px;
@@ -277,10 +297,12 @@ img:before.loadii{
     color: var(--sub_colorText);
     transition: background 0.1s ease;
 }
+
 #changeBarImg input:active {
     color: var(--sub_colorBackground);
     background: var(--sub_colorText);
 }
+
 #changeBarImg > div {
     position: relative;
     display: flex;
@@ -307,31 +329,85 @@ img:before.loadii{
     align-items: center;
     transition: all 0.1s ease;
 }
-    #btn_change.active {
+
+#btn_change.active {
         background: #e33b3b;
         color: white;
         border: none;
     }
 
+/*Scope*/
+#scopeBlock {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.2s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 11;
+    background: rgba(0,0,0,.9);
+}
+
+#scopeBlock.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#scopeBlock img {
+        object-fit: contain;
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+#scope_Cross {
+    user-select: none;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+}
+
+#scope_Cross:hover {
+    opacity: 0.9;
+}
+
+#scope_Cross:active {
+    opacity: 0.5;
+}
 
 /*ScrollBar*/
+
 *::-webkit-scrollbar {
+    display: none;
+}
+
+.text::-webkit-scrollbar {
+    display: block;
     width: 7px;
+}
+
+.text::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 5px;
+}
+
+.text::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.text::-webkit-scrollbar-button {
     display: none;
 }
 
-*::-webkit-scrollbar-thumb {
-    background-color: var(--colorBackground);
-}
-
-*::-webkit-scrollbar-track {
-    background-color: var(--sub_colorBackground);
-}
-
-*::-webkit-scrollbar-button {
-    display: none;
-}
-
-*::-webkit-scrollbar-corner {
+.text::-webkit-scrollbar-corner {
     display: none;
 }

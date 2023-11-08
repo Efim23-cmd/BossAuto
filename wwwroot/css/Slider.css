@@ -16,9 +16,11 @@
     width: 100%;
     background: transparent;
 }
+
 .container.animate {
     transition: transform .5s ease;
 }
+
 .slide {
     user-select: none;
     transition: transform .5s ease;
@@ -26,18 +28,22 @@
     width: 100%;
     height: 100%;
 }
+
 .slide.foreground {
     pointer-events: all;
     opacity: 1;
 }
+
 .slide.around {
     pointer-events: none;
     opacity: 1;
 }
+
 .slide.background{
     pointer-events: none;
     opacity: 0;
 }
+
 .slide img {
     width: 100%;
     height: 100%;
@@ -45,6 +51,7 @@
     -webkit-user-drag: none;
     background: var(--sub_colorBackground);
 }
+
 .slide_bar {
     z-index: 1;
     pointer-events: none;
@@ -61,8 +68,35 @@
     transition: all 0.2s linear;
     background: transparent;
 }
+
 .slide_bar div.active {
     background: var(--sub_colorText);
 }
 
-/*Autosound slider*/
+.slider_side {
+    position: absolute;
+    opacity: 0.1;
+    background: rgba(0,0,0,.3);
+    width: 10%;
+    height: 100%;
+}
+
+.slider_side:hover {
+    opacity: 0.3;
+}
+
+.slider_side_right {
+    right: 0;
+}
+
+.slider_side_left {
+    left: 0;
+}
+
+.slider_side_right:hover {
+    cursor: url('Resource/Icons/arrow-right.svg') 15 0, pointer;
+}
+
+.slider_side_left:hover {
+    cursor: url('Resource/Icons/arrow-left.svg'), pointer;
+}

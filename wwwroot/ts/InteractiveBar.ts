@@ -4,7 +4,7 @@ export default class InteractiveBar {
     public static IsActive: boolean = true;
 
     public static isMod: boolean = false;
-    private static isRun: boolean = false;
+    public static isRun: boolean = false;
 
     private static menuBar = document.getElementById("menuBar");
     private static mapBar = document.getElementById("mapBar");
@@ -24,11 +24,15 @@ export default class InteractiveBar {
 
     private static textSubmit = document.querySelector("#changeBarText input[type='submit']");
 
-    private static btn_change = document.getElementById("btn_change");
+    private static btn_change = document.getElementById("btn_change"); 
+
+    private static container = document.querySelector("#scopeBlock");
+
 
     public static Start() {
         InteractiveBar.SetEvents();
     }
+
     public static SetEvents() {
 
         window?.addEventListener("DOMContentLoaded", function () {
@@ -38,25 +42,9 @@ export default class InteractiveBar {
         });
 
         window.addEventListener("keydown", (event) => {
-            if (event.key == "Escape" && !InteractiveBar.isRun) {
+            if (event.key == "Escape" && !InteractiveBar.isRun && InteractiveBar.IsActive) {
                 InteractiveBar.RemoveActive();
                 InteractiveBar.IsActive = false;
-            }
-        });
-
-        window.addEventListener("keydown", (event) => {
-            if (event.keyCode == 77 && !InteractiveBar.isRun) {
-                if (!InteractiveBar.isRun && document.documentElement.offsetWidth <= 1100) {
-                    if (!InteractiveBar.IsActive) {
-                        InteractiveBar.IsActive = true;
-                        InteractiveBar.mapBar.classList.add("active");
-                        InteractiveBar.button_burger.classList.add("active");
-                    }
-                    else {
-                        InteractiveBar.RemoveActive();
-                        InteractiveBar.IsActive = false;
-                    }
-                }
             }
         });
 
@@ -76,7 +64,6 @@ export default class InteractiveBar {
             if (event.propertyName == "left") {
                 InteractiveBar.isRun = false;
             }
-            InteractiveBar.isRun = false;
         });
         InteractiveBar.mapBar?.addEventListener("transitionstart", (event) => {
             if (event.propertyName == "left") {
@@ -168,35 +155,29 @@ export default class InteractiveBar {
             }
         });
 
-        InteractiveBar.button_map?.addEventListener("mousedown", () => {
+        InteractiveBar.button_map?.addEventListener("click", () => {
             if (!InteractiveBar.isRun && document.documentElement.offsetWidth <= 1100) {
                 InteractiveBar.IsActive = true;
                 InteractiveBar.mapBar.classList.add("active");
                 InteractiveBar.button_burger.classList.add("active");
             }
         });
-        InteractiveBar.button_map?.addEventListener("touchstart", () => {
-            if (!InteractiveBar.isRun && document.documentElement.offsetWidth <= 1100) {
-                InteractiveBar.IsActive = true;
-                InteractiveBar.mapBar.classList.add("active");
-                InteractiveBar.button_burger.classList.add("active");
-            }
-        });
-
         InteractiveBar.linksMenuBar.forEach((link) => {
             link?.addEventListener("click", () => {
                 if (!InteractiveBar.isRun) {
                     InteractiveBar.RemoveActive();
                 }
             });
-        })
+        });
     }
+
     private static RemoveActive() {
         InteractiveBar.menuBar.classList.remove("active");
         InteractiveBar.button_burger.classList.remove("active");
         InteractiveBar.mapBar.classList.remove("active");
         InteractiveBar.changeBarText?.classList.remove("active");
         InteractiveBar.changeBarImg?.classList.remove("active");
+        InteractiveBar.container?.classList.remove("active");
         InteractiveBar.IsActive = false;
     }
 }

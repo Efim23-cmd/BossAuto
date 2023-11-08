@@ -15,9 +15,7 @@ let moveBlock = document.getElementById("moveBlock");
 window?.addEventListener("DOMContentLoaded", function () {
     loadPage.style.opacity = "0";
     moveBlock.style.top = "-5vw";
-    setTimeout(function () {
-        loadPage.style.display = "none";
-    }, 300);
+    loadPage.style.pointerEvents = "none";
 
     GenerateLoadingBlocks("loading");
 

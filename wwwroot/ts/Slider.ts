@@ -5,6 +5,8 @@ export default class Slider {
 
     private container: HTMLElement;
     private slides: HTMLElement[];
+    private side_right: HTMLElement;
+    private side_left: HTMLElement;
     private slidesBar: HTMLElement[];
 
     private listOfPositions: number[];
@@ -12,10 +14,12 @@ export default class Slider {
 
     private IsSlideBar: boolean;
 
-    constructor(containerName: string, SlideListName: string, sliderBar?: string) {
+    constructor(containerName: string, SlideListName: string, side_right?: string, side_left?: string, sliderBar?: string) {
         this.container = document.querySelector(containerName);
         this.slides = Array.from(document.querySelectorAll(SlideListName));
         this.slidesBar = Array.from(document.querySelectorAll(sliderBar));
+        this.side_right = document.querySelector(side_right);
+        this.side_left = document.querySelector(side_left);
     }
 
     public Start() {
@@ -27,6 +31,7 @@ export default class Slider {
             this.SetActiveBar();
         }
     }
+
     private SetEvents() {
         let start: number;
         let end: number;
@@ -93,10 +98,20 @@ export default class Slider {
                 this.Move(difference);
             }
         });
+        this.side_right?.addEventListener("click", () => {
+            if (!InteractiveBar.IsActive && !InteractiveBar.isRun) {
+                this.Move(-300);
+            }
+        });
+        this.side_left?.addEventListener("click", () => {
+            if (!InteractiveBar.IsActive && !InteractiveBar.isRun) {
+                this.Move(300);
+            }
+        });
     }
 
     private Move(difference) {
-        if (difference < -200 || difference > 200) {
+        if (difference < -150 || difference > 150) {
             if (difference < 0) {
                 this.Next();
             }
@@ -157,6 +172,7 @@ export default class Slider {
             this.slides[index].style.transform = `translateX(${this.listOfPositions[index]}%)`;
         }
     }
+
     private SetActiveBar() {
         this.RemoveActiveBar();
         this.index = this.CheckValideIndex(this.index)

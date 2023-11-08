@@ -78,7 +78,8 @@ class ChangerImg {
                     headers: {
                         "Accept": "application/json"
                     },
-                    body: formData
+                    body: formData,
+                    keepalive: true
                 });
                 let response = yield myFetch.json();
                 if (myFetch.ok) {
@@ -140,7 +141,8 @@ class ChangerText {
                 headers: {
                     "Accept": "application/json"
                 },
-                body: formData
+                body: formData,
+                keepalive: true
             });
             let response = yield myFetch.json();
             if (myFetch.ok) {

@@ -3,10 +3,12 @@
     font-family: "Lexend_Deca";
     src: url(Resource/Fonts/LexendDeca-Regular.ttf)
 }
+
 @font-face {
     font-family: "Roboto_Mono";
     src: url(Resource/Fonts/RobotoMono.ttf)
 }
+
 @font-face {
     font-family: "Font Awesome 6 Brands";
     font-style: normal;
@@ -36,6 +38,7 @@
     font-weight: 400;
     src: url("Resource/Fonts/fa-v4compatibility.ttf") format("truetype");
 }
+
 *::selection {
     background: var(--colorBackground);
     color: var(--sub_colorBackground);

@@ -21,6 +21,12 @@
         <h1>BossAuto</h1>
     </div>
 </div>
+<div id="scopeBlock">
+    <div id="scope_Cross">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <img id="scopeImg"/>
+</div>
 <div id="mapBar"></div>
 <div id="menuBar">
     <div>
@@ -95,18 +101,15 @@
     </div>
 </div>
 
-<div id="main_body">
+<div id="tape">
     <div id="container">
         <div id="contactsScreen" class="screen">
             <div>
                 <div class="moveableBlock" id="welcome"></div>
-                <div class="moveableBlock" id="location">
-                    ул. Фестивальная, д.72, Йошкар-Ола, РМЭ, 424000, Россия
-                </div>
+                <receiver-text class="moveableBlock changeBlockText" id="location"></receiver-text>
                 <receiver-text class="moveableBlock changeBlockText" id="schedule"></receiver-text>
                 <receiver-text class="moveableBlock changeBlockText" id="phone"></receiver-text>
                 <div class="moveableBlock" id="map"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Afe6e8b98215d440a02e6af7247ab71623af5df4eab6dfb8926434a379aad7380&amp;source=constructor" frameborder="0"></iframe></div>
-                <div class="moveableBlock" id="location">ул. Фестивальная, д.72, Йошкар-Ола, РМЭ, 424000, Россия</div>
             </div>
         </div>
         <div id="autoSoundScreen" class="screen">
@@ -140,6 +143,8 @@
                                 <receiver-img class="changeBlockImg" id="7" />
                             </div>
                         </div>
+                        <div class="slider_side slider_side_right"></div>
+                        <div class="slider_side slider_side_left"></div>
                     </div>
                 </div>
             </div>
@@ -170,6 +175,8 @@
                                 <receiver-img class="changeBlockImg" id="10" />
                             </div>
                         </div>
+                        <div class="slider_side slider_side_right"></div>
+                        <div class="slider_side slider_side_left"></div>
                     </div>
                 </div>
             </div>
@@ -200,6 +207,8 @@
                                 <receiver-img class="changeBlockImg" id="16" />
                             </div>
                         </div>
+                        <div class="slider_side slider_side_right"></div>
+                        <div class="slider_side slider_side_left"></div>
                     </div>
                 </div>
             </div>
@@ -229,11 +238,15 @@
                                 <receiver-img class="changeBlockImg" id="21" />
                             </div>
                         </div>
+                        <div class="slider_side slider_side_right"></div>
+                        <div class="slider_side slider_side_left"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
 </div>
 
 @section Script{

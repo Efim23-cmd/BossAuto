@@ -3,31 +3,16 @@ class InteractiveBar {
         InteractiveBar.SetEvents();
     }
     static SetEvents() {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         window === null || window === void 0 ? void 0 : window.addEventListener("DOMContentLoaded", function () {
             setTimeout(function () {
                 InteractiveBar.IsActive = false;
             }, 300);
         });
         window.addEventListener("keydown", (event) => {
-            if (event.key == "Escape" && !InteractiveBar.isRun) {
+            if (event.key == "Escape" && !InteractiveBar.isRun && InteractiveBar.IsActive) {
                 InteractiveBar.RemoveActive();
                 InteractiveBar.IsActive = false;
-            }
-        });
-        window.addEventListener("keydown", (event) => {
-            if (event.keyCode == 77 && !InteractiveBar.isRun) {
-                if (!InteractiveBar.isRun && document.documentElement.offsetWidth <= 1100) {
-                    if (!InteractiveBar.IsActive) {
-                        InteractiveBar.IsActive = true;
-                        InteractiveBar.mapBar.classList.add("active");
-                        InteractiveBar.button_burger.classList.add("active");
-                    }
-                    else {
-                        InteractiveBar.RemoveActive();
-                        InteractiveBar.IsActive = false;
-                    }
-                }
             }
         });
         window.addEventListener("resize", () => {
@@ -45,7 +30,6 @@ class InteractiveBar {
             if (event.propertyName == "left") {
                 InteractiveBar.isRun = false;
             }
-            InteractiveBar.isRun = false;
         });
         (_c = InteractiveBar.mapBar) === null || _c === void 0 ? void 0 : _c.addEventListener("transitionstart", (event) => {
             if (event.propertyName == "left") {
@@ -128,14 +112,7 @@ class InteractiveBar {
                 }
             }
         });
-        (_o = InteractiveBar.button_map) === null || _o === void 0 ? void 0 : _o.addEventListener("mousedown", () => {
-            if (!InteractiveBar.isRun && document.documentElement.offsetWidth <= 1100) {
-                InteractiveBar.IsActive = true;
-                InteractiveBar.mapBar.classList.add("active");
-                InteractiveBar.button_burger.classList.add("active");
-            }
-        });
-        (_p = InteractiveBar.button_map) === null || _p === void 0 ? void 0 : _p.addEventListener("touchstart", () => {
+        (_o = InteractiveBar.button_map) === null || _o === void 0 ? void 0 : _o.addEventListener("click", () => {
             if (!InteractiveBar.isRun && document.documentElement.offsetWidth <= 1100) {
                 InteractiveBar.IsActive = true;
                 InteractiveBar.mapBar.classList.add("active");
@@ -151,12 +128,13 @@ class InteractiveBar {
         });
     }
     static RemoveActive() {
-        var _a, _b;
+        var _a, _b, _c;
         InteractiveBar.menuBar.classList.remove("active");
         InteractiveBar.button_burger.classList.remove("active");
         InteractiveBar.mapBar.classList.remove("active");
         (_a = InteractiveBar.changeBarText) === null || _a === void 0 ? void 0 : _a.classList.remove("active");
         (_b = InteractiveBar.changeBarImg) === null || _b === void 0 ? void 0 : _b.classList.remove("active");
+        (_c = InteractiveBar.container) === null || _c === void 0 ? void 0 : _c.classList.remove("active");
         InteractiveBar.IsActive = false;
     }
 }
@@ -176,5 +154,6 @@ InteractiveBar.linksMenuBar = Array.from(document.getElementsByClassName("link_m
 InteractiveBar.imgSubmit = document.querySelector("#changeBarImg input[type='submit']");
 InteractiveBar.textSubmit = document.querySelector("#changeBarText input[type='submit']");
 InteractiveBar.btn_change = document.getElementById("btn_change");
+InteractiveBar.container = document.querySelector("#scopeBlock");
 export default InteractiveBar;
 //# sourceMappingURL=InteractiveBar.js.map

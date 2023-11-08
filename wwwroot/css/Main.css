@@ -7,6 +7,9 @@
 @import 'Content.css';
 
 html {
+    height: 100%;
+    width: 100%;
+    --differenceSizeFont: 0em;
     --heightNavigation: 70px;
     --font: "Lexend_Deca";
     --sub_font: "Roboto_Mono";
@@ -23,37 +26,38 @@ html {
 }
 
 html.default {
-    --colorBackground: #ffda47;
+    --colorBackground: #dda15e;
     --sub_colorBackground: white;
     --sub_colorText: black;
 }
 
 html.Autosound {
-    --colorBackground: white;
-    --sub_colorBackground: #e9c46a;
-    --sub_colorText: #264653;
+    --colorBackground: #333533;
+    --sub_colorBackground: white;
+    --sub_colorText: #202020;
 }
 
 html.Alarms {
-    --colorBackground: #b8b8ff;
+    --colorBackground: #bc6c25;
     --sub_colorBackground: white;
-    --sub_colorText: #736ced;
+    --sub_colorText: black;
 }
 
 html.Tinting {
-    --colorBackground: #76b041;
-    --sub_colorBackground: #f2e8cf;
-    --sub_colorText: #386641;
+    --colorBackground: #457b9d;
+    --sub_colorBackground: white;
+    --sub_colorText: black;
 }
 
 html.Insulation {
-    --colorBackground: #f5cb5c;
-    --sub_colorBackground: #242423;
-    --sub_colorText: white;
+    --colorBackground: #e9c46a;
+    --sub_colorBackground: white;
+    --sub_colorText: black;
 }
 
-
 body {
+    height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
     font-family: var(--font),var(--sub_font), monospace;
@@ -62,12 +66,7 @@ body {
     -webkit-tap-highlight-color: transparent;
     overflow: hidden;
 }
-#main_body {
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    position: absolute;
-}
+
 .load {
     top: 0;
     position: absolute;
@@ -79,6 +78,7 @@ body {
     height: 100%;
     background: var(--sub_colorBackground);
 }
+
 .loader {
     width: 48px;
     height: 48px;
@@ -98,21 +98,26 @@ body {
     100% {
         transform: rotate(360deg);
     }
-} 
+}
+
+#tape {
+    height: 100%;
+    width: 100%;
+}
+
 #container {
+    height: 100%;
+    width: 100%;
     position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    align-content: space-between;
     transition: all 0.5s ease-out;
 }
+
 .screen {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     transition: background 0.2s ease;
 }
+
 .screen > div {
     position: relative;
     top: var(--heightNavigation);
@@ -123,6 +128,7 @@ body {
     grid-template-columns: repeat(40, 1fr);
     position: relative;
 }
+
 a {
     color: inherit;
     text-decoration: none;
@@ -131,7 +137,11 @@ a {
 }
 
 a:hover {
-    opacity: 0.5;
+        opacity: 0.5;
+    }
+
+p {
+    margin: 0;
 }
 
 img {
@@ -142,16 +152,20 @@ img {
 img.animate {
     transition: scale 0.3s ease, left 0.6s ease, top 0.6s ease, background 0.3s ease;
 }
+
 img.grab {
     cursor: grab;
 }
+
 img.grabing {
     cursor: grabbing;
 }
+
 .priceList table {
-    width: 80%;
+    width: 95%;
     border-collapse: collapse;
 }
+
 .priceList tr {
     border-bottom: 1px solid black;
 }
@@ -164,7 +178,7 @@ img.grabing {
     text-align: left;
 }
 
-.priceList tr th:first-child  {
+.priceList tr th:first-child {
     text-align: left;
 }
 

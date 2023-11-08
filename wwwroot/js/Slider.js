@@ -1,10 +1,12 @@
 import InteractiveBar from "./InteractiveBar.js";
 export default class Slider {
-    constructor(containerName, SlideListName, sliderBar) {
+    constructor(containerName, SlideListName, side_right, side_left, sliderBar) {
         this.index = 0;
         this.container = document.querySelector(containerName);
         this.slides = Array.from(document.querySelectorAll(SlideListName));
         this.slidesBar = Array.from(document.querySelectorAll(sliderBar));
+        this.side_right = document.querySelector(side_right);
+        this.side_left = document.querySelector(side_left);
     }
     Start() {
         this.listOfPositions = this.CreatPosList();
@@ -16,6 +18,7 @@ export default class Slider {
         }
     }
     SetEvents() {
+        var _a, _b;
         let start;
         let end;
         let difference = 0;
@@ -75,9 +78,19 @@ export default class Slider {
                 this.Move(difference);
             }
         });
+        (_a = this.side_right) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
+            if (!InteractiveBar.IsActive && !InteractiveBar.isRun) {
+                this.Move(-300);
+            }
+        });
+        (_b = this.side_left) === null || _b === void 0 ? void 0 : _b.addEventListener("click", () => {
+            if (!InteractiveBar.IsActive && !InteractiveBar.isRun) {
+                this.Move(300);
+            }
+        });
     }
     Move(difference) {
-        if (difference < -200 || difference > 200) {
+        if (difference < -150 || difference > 150) {
             if (difference < 0) {
                 this.Next();
             }

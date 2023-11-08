@@ -4,7 +4,7 @@
     background: var(--sub_colorBackground);
     color: var(--sub_colorText);
     box-shadow: 0px 0px 7px #979797;
-    border-radius: 15px;
+    border-radius: 5px;
     overflow: hidden;
     text-align: center;
     position: relative;
@@ -12,59 +12,64 @@
     justify-content: center;
     align-items: center;
     gap: 3px;
+    overflow: scroll;
 }
 
 .moveableBlock.grabbing {
-    cursor: grabbing;
-}
+        cursor: grabbing;
+    }
 
 /*Contacts*/
 #contactsScreen {
-    background-color: #ffda47;
+    background-color: #dda15e;
     font-size: 10px;
 }
+
 #welcome {
     grid-area: 2 / 2 / 5 / 22;
-    font-size: 4em;
+    font-size: calc(3.5em - var(--differenceSizeFont));
 }
+
 #location {
     grid-area: 28 / 2 / 36 / 22;
-    font-size: 2.5em;
+    font-size: calc(2.5em - var(--differenceSizeFont));
 }
+
 #schedule {
     grid-area: 6 / 2 / 27 / 22;
-    font-size: 3em;
+    font-size: calc(3em - var(--differenceSizeFont));
 }
+
 #phone {
     grid-area: 37 / 2 / 39 / 22;
-    font-size: 2em;
+    font-size: calc(2.5em - var(--differenceSizeFont));
 }
+
 #map {
     grid-area: 2 / 23 / 39 / 40;
     user-select: none;
 }
-#map iframe {  
-    width: 100%;
-    height: 100%;
-}
+
+#map iframe {
+        width: 100%;
+        height: 100%;
+    }
 
 /*Автозвук*/
 #autoSoundScreen {
     z-index: 1;
-    background-color: white;
+    background-color: #333533;
     font-size: 10px;
 }
+
 #autoSoundScreen .title {
     grid-area: 2 / 2 / 5 / 40;
-    font-size: 5em;
 }
+
 #autoSoundScreen .text {
     grid-area: 6 / 2 / 40 / 22;
-    display: block;
-    text-align: left;
-    font-size: 2.5em;
-    padding-left: 20px;
 }
+
 #autoSoundScreen .slider {
     grid-area: 6 / 23 / 40 / 40;
 }
@@ -72,75 +77,86 @@
 /*Автосигнализация*/
 #alarmsScreen {
     z-index: 1;
-    background-color: #b8b8ff;
+    background-color: #bc6c25;
     font-size: 10px;
 }
+
 #alarmsScreen .title {
     grid-area: 2 / 2 / 5 / 40;
-    font-size: 5em;
 }
 
-    #alarmsScreen .text {
-        grid-area: 6 / 2 / 25 / 22;
-        text-align: left;
-        font-size: 2.4em;
-        padding-left: 20px;
-    }
+#alarmsScreen .text {
+    grid-area: 6 / 2 / 25 / 22;
+}
 
-    #alarmsScreen .priceList {
-        grid-area: 26 / 2 / 40 / 22;
-        font-size: 2em;
-    }
+#alarmsScreen .priceList {
+    grid-area: 26 / 2 / 40 / 22;
+}
 
-    #alarmsScreen .slider {
-        grid-area: 6 / 23 / 40 / 40;
-    }
+#alarmsScreen .slider {
+    grid-area: 6 / 23 / 40 / 40;
+}
+
 /*Тонирвка*/
 #tintingScreen {
     z-index: 1;
-    background-color: #76b041;
+    background-color: #457b9d;
     font-size: 10px;
 }
-    #tintingScreen .title {
-        grid-area: 2 / 2 / 5 / 40;
-        font-size: 5em;
-    }
 
-    #tintingScreen .text {
-        grid-area: 6 / 2 / 25 / 22;
-        text-align: left;
-        font-size: 2.5em;
-        padding-left: 20px;
-    }
+#tintingScreen .title {
+    grid-area: 2 / 2 / 5 / 40;
+}
 
-    #tintingScreen .priceList {
-        grid-area: 26 / 2 / 40 / 22;
-        font-size: 2em;
-    }
+#tintingScreen .text {
+    grid-area: 6 / 2 / 25 / 22;
+}
 
-    #tintingScreen .slider {
-        grid-area: 6 / 23 / 40 / 40;
-    }
+#tintingScreen .priceList {
+    grid-area: 26 / 2 / 40 / 22;
+}
+
+#tintingScreen .slider {
+    grid-area: 6 / 23 / 40 / 40;
+}
+
 /*Шумоизоляция*/
 #insulationScreen {
     z-index: 1;
-    background-color: #f5cb5c;
+    background-color: #e9c46a;
     font-size: 10px;
 }
 
-    #insulationScreen .title {
-        grid-area: 2 / 2 / 5 / 40;
-        font-size: 5em;
-    }
+#insulationScreen .title {
+    grid-area: 2 / 2 / 5 / 40;
+}
 
-    #insulationScreen .text {
-        grid-area: 6 / 2 / 40 / 22;
-        text-align: left;
-        padding: 10px;
-        font-size: 2.5em;
-        padding-left: 20px;
-    }
+#insulationScreen .text {
+    grid-area: 6 / 2 / 40 / 22;
+}
 
-    #insulationScreen .slider {
-        grid-area: 6 / 23 / 40 / 40;
-    }
+#insulationScreen .slider {
+    grid-area: 6 / 23 / 40 / 40;
+}
+
+
+.screen .title {
+    font-size: calc(4em - var(--differenceSizeFont));
+    padding: 10px;
+}
+
+.screen .text {
+    display: block;
+    text-align: left;
+    font-size: calc(2.5em - var(--differenceSizeFont));
+    padding: 10px;
+}
+
+.screen .priceList {
+    font-size: calc(2.2em - var(--differenceSizeFont));
+    padding: 10px;
+}
+
+.screen .slider {
+    overflow: hidden;
+}

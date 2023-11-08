@@ -2,7 +2,7 @@
   "version": "1.0",
   "api_version": 3,
   "layout": {
-    "logo": "/tableau.png",
+    "logo": "/wwwroot/css/Resource/Icons/tableau.png",
     "color": "#9c8a5b"
   }
 }
